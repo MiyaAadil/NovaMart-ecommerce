@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Hero from '../components/Hero'
-import getProducts from '../services/api'
+import { getProducts } from '../services/api'
 import ProductGrid from '../components/ProductGrid'
 
 const Home = () => {
