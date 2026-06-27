@@ -5,7 +5,7 @@ import NavLogo from '../assets/images/Novalogo.png'
 
 const Navbar = () => {
   return (
-      <nav className='bg-[#0F172A] text-white flex justify-between px-5 items-center h-16 w-full sticky top-0 z-50'>
+      <nav className='text-white flex justify-between px-5 items-center h-16 w-full sticky top-0 z-50 bg-gray-100/10'>
 
         <Link to='/'><img src={NavLogo} alt="Brand logo" className='h-15' /></Link>
 
