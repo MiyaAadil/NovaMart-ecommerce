@@ -35,7 +35,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search products..."
-              className="w-full rounded-l-full px-4 py-2 bg-gray-300/70 text-black outline-none"
+              className="w-full rounded-l-full px-4 py-2 bg-gray-300 text-black outline-none"
             />
 
             <button className="bg-blue-950 px-4 py-2 rounded-r-full hover:bg-blue-900 cursor-pointer transition">

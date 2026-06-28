@@ -6,7 +6,7 @@ const CartItem = ({product}) => {
   const { increaseQuantity, decreaseQuantity, removeFromCart  } = useContext(CartContext);
 
   return (
-      <div className='text-white border w-70 p-4 flex flex-col items-center justify-between rounded-2xl cursor-pointer hover:bg-gray-50/5 transition-all transform-600'>
+      <div className='text-white border w-70 p-4 flex flex-col items-center rounded-2xl cursor-pointer hover:bg-gray-50/5 transition-all transform-600'>
 
         <img className='h-30 object-contain' src={product.image} alt={product.title} />
 
@@ -26,7 +26,7 @@ const CartItem = ({product}) => {
 
       </div>
 
-      <button className='bg-red-500 p-2 mt-3 w-20 text-sm rounded-full hover:bg-red-600 cursor-pointer transition-all transform-600 active:scale-95' 
+      <button className='bg-red-500 p-1 mt-3 w-20 text-sm rounded-full hover:bg-red-600 cursor-pointer transition-all transform-600 active:scale-95' 
       onClick={() => removeFromCart(product.id)}>Remove</button>
       </div>
   )
