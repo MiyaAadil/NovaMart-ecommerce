@@ -33,7 +33,7 @@ const ProductDetails = () => {
 
   return (
     <div className='text-white flex flex-col items-center justify-center gap-5 m-5 p-5 border rounded-2xl'>
-      <img className='h-100' src={product.image} alt={product.title} />
+      <img className='h-100 object-contain' src={product.image} alt={product.title} />
 
       <div className='flex flex-col items-center gap-3'>
         <h1 className='text-2xl font-bold'>{product.title}</h1>
