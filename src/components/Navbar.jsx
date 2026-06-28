@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Search, ShoppingCart, Menu, X } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, ShoppingCartIcon } from 'lucide-react';
 import NavLogo from '../assets/images/Novalogo.png'
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
@@ -77,7 +77,7 @@ const Navbar = () => {
 
           {/* Mobile Button */}
           <button
-            className="md:hidden"
+            className="md:hidden cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -92,7 +92,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-black text-white px-6 py-4 space-y-4">
 
-          <div className="flex">
+          <div className="flex ">
 
             <input
               type="text"
@@ -100,7 +100,7 @@ const Navbar = () => {
               className="flex-1 rounded-l-full px-4 py-2 bg-white text-black outline-none"
             />
 
-            <button className="bg-blue-900 px-4 rounded-r-full">
+            <button className="bg-blue-900 px-4 rounded-r-full cursor-pointer">
               <Search />
             </button>
 
@@ -124,10 +124,10 @@ const Navbar = () => {
 
           <Link
             to="/cart"
-            className="block"
+            className="flex"
             onClick={() => setIsOpen(false)}
           >
-            Cart ({cartCount})
+            <ShoppingCart /> ({cartCount})
           </Link>
 
         </div>
