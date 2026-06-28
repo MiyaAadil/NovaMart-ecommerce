@@ -18,9 +18,7 @@ const ProductCard = ({ product }) => {
       <p className='text-sm lg:text-md'>${product.price}</p>
 
       <div className='flex justify-between lg:w-50 gap-2'>
-          <button className='bg-blue-900 text-xs lg:text-md lg:py-2 p-1 px-2 lg:px-3 rounded-full cursor-pointer hover:bg-blue-950' onClick={() => addToCart(product)}>Add to Cart</button>
-          <Link to={`/products/${product.id}`} className='bg-red-400 py-2 px-3 rounded-full cursor-pointer hover:bg-red-500'>
-          View</Link>
+          <button className='bg-blue-900 text-xs lg:text-md lg:py-2 p-2 lg:px-3 rounded-full cursor-pointer hover:bg-blue-950' onClick={() => addToCart(product)}>Add to Cart</button>
       </div>
     </div>
     </Link>
