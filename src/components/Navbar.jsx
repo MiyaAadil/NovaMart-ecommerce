@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Search, ShoppingCart, Menu, X, ShoppingCartIcon } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, ShoppingCartIcon, Bookmark } from 'lucide-react';
 import NavLogo from '../assets/images/Novalogo.png'
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
@@ -17,28 +17,28 @@ const Navbar = () => {
 
   return (
       <>
-      <nav className="bg-gray-50/8 text-white px-6 py-1 h-16 sticky top-0 z-50">
+      <nav className="bg-gray-100/90 rounded-full top-3 mx-10 h-15 flex sticky z-50 shadow-md">
 
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="w-full mx-10 flex items-center justify-between">
 
           {/* Logo */}
           <Link to="/">
             <img
               src={NavLogo}
               alt="NovaMart Logo"
-              className="h-15"
+              className='h-10 w-20 mt-3 object-contain'
             />
           </Link>
 
           {/* Search (Desktop) */}
-          <div className="hidden md:flex items-center flex-1 max-w-xl mx-10">
+          <div className="hidden md:flex items-center rounded-full bg-white flex-1 max-w-sm mx-10">
             <input
               type="text"
               placeholder="Search products..."
-              className="w-full rounded-l-full px-4 py-2 bg-gray-300 text-black outline-none"
+              className="w-full px-5 py-3 text-black outline-none text-sm"
             />
 
-            <button className="bg-blue-950 px-4 py-2 rounded-r-full hover:bg-blue-900 cursor-pointer transition">
+            <button className="bg-black text-white p-2 rounded-full cursor-pointer transition">
               <Search />
             </button>
           </div>
@@ -48,23 +48,23 @@ const Navbar = () => {
 
             <Link
               to="/"
-              className="hover:bg-gray-700 py-2 px-2 rounded-full transition-all duration-300"
+              className="hover:scale-95 transition-all duration-400"
             >
               Home
             </Link>
 
             <Link
               to="/products"
-              className="hover:bg-gray-700 py-2 px-2 rounded-full transition-all duration-300"
+              className="hover:scale-96 transition-all duration-400"
             >
               Products
             </Link>
 
             <Link
               to="/cart"
-              className="relative hover:bg-gray-700 py-2 px-2 rounded-full transition-all duration-300"
+              className="relative bg-white p-3 rounded-full transition-all duration-300"
             >
-              <ShoppingCart size={26} />
+              <ShoppingCartIcon size={15} />
 
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-600 text-xs w-5 h-5 rounded-full flex justify-center items-center">
@@ -72,16 +72,32 @@ const Navbar = () => {
                 </span>
               )}
             </Link>
+            <p className='bg-white p-3 rounded-full transition-all duration-300 cursor-pointer'><Bookmark size={15} /></p>
 
           </div>
 
           {/* Mobile Button */}
-          <button
-            className="md:hidden cursor-pointer"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          <div className='flex gap-4'>
+              <Link
+                  to="/cart"
+                  className="relative bg-white p-3 rounded-full transition-all duration-300 md:hidden"
+                >
+                  <ShoppingCart size={15} />
+
+                  {cartCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-600 text-xs w-5 h-5 rounded-full flex justify-center items-center">
+                      {cartCount}
+                    </span>
+                  )}
+                </Link>
+                
+                <button
+                className="md:hidden cursor-pointer"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
+          </div>
 
         </div>
 
@@ -90,13 +106,13 @@ const Navbar = () => {
       {/* Mobile Menu */}
 
       {isOpen && (
-        <div className="md:hidden bg-black/95 text-white px-8 py-20 space-y-4 fixed inset-0 z-50 flex flex-col gap-6 backdrop-blur-sm animate-fade-in">
+        <div className="md:hidden bg-black/95 text-white px-8 py-20 space-y-4 fixed inset-0 z-50 flex flex-col gap-7 backdrop-blur-sm animate-fade-in">
 
           <button 
-            className="absolute top-4 right-4 text-white cursor-pointer"
+            className="absolute top-5 right-17 text-white cursor-pointer"
             onClick={() => setIsOpen(false)}
           >
-            <X size={28} />
+            <X size={40} />
           </button>
 
           <div className="flex ">
@@ -128,14 +144,7 @@ const Navbar = () => {
           >
             Products
           </Link>
-
-          <Link
-            to="/cart"
-            className="flex"
-            onClick={() => setIsOpen(false)}
-          >
-            <ShoppingCart /> ({cartCount})
-          </Link>
+          <p className='flex gap-1 cursor-pointer'><Bookmark />Saved</p>
 
         </div>
       )}
