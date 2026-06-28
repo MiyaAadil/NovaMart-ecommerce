@@ -4,11 +4,14 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { CartProvider } from './context/CartContext.jsx'
+import { Toaster } from "react-hot-toast";
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <CartProvider>
       <BrowserRouter>
+      <Toaster position="top-right" />
           <App /> 
       </BrowserRouter>
     </CartProvider>

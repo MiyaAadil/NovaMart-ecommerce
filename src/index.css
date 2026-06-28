@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
 
 html, body {
   background-color: #0F172A;
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }
