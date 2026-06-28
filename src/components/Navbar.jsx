@@ -90,7 +90,14 @@ const Navbar = () => {
       {/* Mobile Menu */}
 
       {isOpen && (
-        <div className="md:hidden bg-black text-white px-6 py-4 space-y-4">
+        <div className="md:hidden bg-black/95 text-white px-8 py-20 space-y-4 fixed inset-0 z-50 flex flex-col gap-6 backdrop-blur-sm animate-fade-in">
+
+          <button 
+            className="absolute top-4 right-4 text-white cursor-pointer"
+            onClick={() => setIsOpen(false)}
+          >
+            <X size={28} />
+          </button>
 
           <div className="flex ">
 
