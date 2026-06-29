@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
       <>
-      <nav className="bg-gray-100/90 rounded-full top-3 mx-10 h-15 flex sticky z-50 shadow-md">
+      <nav className="bg-gray-100/90 rounded-full top-3 mx-5 md:mx-10 h-15 flex sticky z-50 shadow-md">
 
         <div className="w-full mx-10 flex items-center justify-between">
 
