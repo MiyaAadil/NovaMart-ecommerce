@@ -22,7 +22,7 @@ const addToCart = (product) => {
         setCart([...cart, { ...product, quantity: 1,
             },])
         };
-        toast.success(`${product.title} Added to cart!`)
+        toast.success(`Added to cart successfully!`)
 };
 
 const increaseQuantity = (id) => {

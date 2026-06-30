@@ -15,6 +15,7 @@ createRoot(document.getElementById('root')).render(
         duration: 2000,
         style: {
           borderRadius: "20px",
+          color: "green",
         },
       }} />
           <App /> 
