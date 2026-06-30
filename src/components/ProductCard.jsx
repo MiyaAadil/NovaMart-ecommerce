@@ -1,15 +1,39 @@
 import { Link } from 'react-router-dom'
-
+import { Heart } from "lucide-react";
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
+import { WishlistContext } from "../context/WishlistContext";
 import CartItem from '../components/CartItem'
 
 const ProductCard = ({ product }) => {
 
   const { addToCart } = useContext(CartContext);
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useContext(WishlistContext);
   
   return (
-    <div className='text-white hover:bg-gray-700 bg-gray-800 py-2 rounded-3xl hover:scale-105 transition-all duration-600 cursor-pointer flex flex-col items-center justify-between gap-2'>
+    <div className='text-white hover:bg-gray-700 bg-gray-800 py-2 rounded-3xl hover:scale-102 transition-all duration-600 cursor-pointer flex flex-col items-center justify-between gap-2'>
+
+
+          <div className="relative">
+
+            <button
+              className="absolute top-0 -right-19 md:-right-40 bg-white rounded-full p-2 shadow cursor-pointer"
+              onClick={() =>
+                isInWishlist(product.id)
+                  ? removeFromWishlist(product.id)
+                  : addToWishlist(product)
+              }
+            >
+              <Heart
+                className={
+                  isInWishlist(product.id)
+                    ? "fill-red-500 text-red-500"
+                    : "text-gray-500"
+                }
+              />
+            </button>
+
+          </div>
 
       <Link to={`/products/${product.id}`}> 
       <div className='flex flex-col items-center'>
@@ -21,7 +45,7 @@ const ProductCard = ({ product }) => {
       </div>
       </Link>
 
-      <div className='flex justify-between lg:w-50 gap-2'>
+      <div className='flex justify-center lg:w-50 gap-2'>
           <button className='bg-blue-900 text-xs lg:text-md lg:py-2 p-2 lg:px-3 rounded-full cursor-pointer hover:bg-blue-950' onClick={() => addToCart(product)}>Add to Cart</button>
       </div>
 

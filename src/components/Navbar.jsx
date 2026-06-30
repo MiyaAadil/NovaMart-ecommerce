@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
-import { Search, ShoppingCart, Menu, X, ShoppingCartIcon, Bookmark } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, ShoppingCartIcon, Heart } from 'lucide-react';
 import NavLogo from '../assets/images/Novalogo.png'
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
+import { WishlistContext} from '../context/WishlistContext';
 
 
 const Navbar = () => {
@@ -10,6 +11,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const { cart } = useContext(CartContext);
+
+  const { wishlist } = useContext(WishlistContext);
 
   const cartCount = cart.reduce((total, item) => {
     return total + item.quantity;
@@ -73,8 +76,14 @@ const Navbar = () => {
               )}
             </Link>
             
-            <Link to='/saved'>
-            <p className='bg-white p-3 rounded-full transition-all duration-300 cursor-pointer'><Bookmark size={15} /></p></Link>
+            <Link to='/wishlist'
+            className="relative bg-white p-3 cursor-pointer rounded-full transition-all">
+            <Heart size={15} />
+
+            {wishlist.length > 0 && (
+            <span className='absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center'>{wishlist.length}</span>
+          )}
+            </Link>
 
           </div>
 
@@ -147,8 +156,14 @@ const Navbar = () => {
             Products
           </Link>
 
-          <Link to='/saved'>
-          <p className='flex gap-1 cursor-pointer'><Bookmark />Saved</p></Link>
+          <Link to='/wishlist' onClick={() => setIsOpen(false)}>
+          <div className='flex gap-1 relative'>
+            <p>Wishlist</p><Heart />
+              {wishlist.length > 0 && (
+                <span className='absolute bg-red-500 right-56 -top-4 rounded-full px-2'>{wishlist.length}</span>
+              )}    
+          </div>
+          </Link>
 
         </div>
       )}

@@ -8,7 +8,7 @@ import ProductDetails from '../pages/ProductDetails'
 import Cart from '../pages/Cart'
 import NotFound from '../pages/NotFound'
 import About from '../pages/About'
-import Saved from '../pages/Saved'
+import Wishlist from '../pages/Wishlist'
 
 const AppRoutes = () => {
   return (
@@ -21,7 +21,7 @@ const AppRoutes = () => {
             <Route path='/products/:id' element={<ProductDetails />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/about' element={<About />} />
-            <Route path='/saved' element={<Saved />} />
+            <Route path='/wishlist' element={<Wishlist />} />
         </Route>
         
         <Route path='*' element={<NotFound />} />
