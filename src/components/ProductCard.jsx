@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
           <div className="relative">
 
             <button
-              className="absolute top-0 -right-19 md:-right-40 bg-white rounded-full p-2 shadow cursor-pointer"
+              className="absolute top-0 -right-21 md:-right-40 bg-white rounded-full p-2 shadow cursor-pointer"
               onClick={() =>
                 isInWishlist(product.id)
                   ? removeFromWishlist(product.id)
