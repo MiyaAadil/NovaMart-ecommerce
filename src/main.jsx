@@ -11,7 +11,12 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <CartProvider>
       <BrowserRouter>
-      <Toaster position="top-right" />
+      <Toaster position="bottom-center" toastOptions={{
+        duration: 2000,
+        style: {
+          borderRadius: "20px",
+        },
+      }} />
           <App /> 
       </BrowserRouter>
     </CartProvider>

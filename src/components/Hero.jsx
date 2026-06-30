@@ -3,7 +3,7 @@ import KeyboardImage from '../assets/images/keyboard.avif'
 
 const Hero = () => {
   return (
-    <div className='flex mx-5 md:mx-10 mt-5 gap-4 w-auto'>
+    <div className='flex mx-5 md:mx-10 mt-5 gap-3'>
 
         <div className='bg-gray-100 p-6 md:p-12 lg:p-16 flex flex-col-reverse rounded-4xl'>
           
@@ -36,14 +36,12 @@ const Hero = () => {
           
         </div>
 
-        <div className='h-full flex flex-col gap-4'>
-              <div className='h-50 w-50 bg-white rounded-3xl'>
+        <div className='flex flex-col gap-3'>
+              <div className='h-40 w-40 bg-white rounded-3xl'></div>
 
-              </div>
+              <div className='h-50 bg-white rounded-3xl'></div>
 
-              <div className='h-50 w-50 bg-white rounded-3xl'>
-
-              </div>
+              <div className='h-55 bg-white rounded-3xl'></div>
         </div>
 
     </div>

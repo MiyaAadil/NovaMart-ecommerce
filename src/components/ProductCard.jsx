@@ -9,7 +9,7 @@ const ProductCard = ({ product }) => {
   const { addToCart } = useContext(CartContext);
   
   return (
-    <div className='text-white hover:bg-gray-600 bg-gray-800 py-2 rounded-3xl hover:scale-95 transition-all duration-600 cursor-pointer flex flex-col items-center justify-between gap-2'>
+    <div className='text-white hover:bg-gray-700 bg-gray-800 py-2 rounded-3xl hover:scale-105 transition-all duration-600 cursor-pointer flex flex-col items-center justify-between gap-2'>
 
       <Link to={`/products/${product.id}`}> 
       <div className='flex flex-col items-center'>

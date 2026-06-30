@@ -67,12 +67,14 @@ const Navbar = () => {
               <ShoppingCartIcon size={15} />
 
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-600 text-xs w-5 h-5 rounded-full flex justify-center items-center">
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex justify-center items-center">
                   {cartCount}
                 </span>
               )}
             </Link>
-            <p className='bg-white p-3 rounded-full transition-all duration-300 cursor-pointer'><Bookmark size={15} /></p>
+            
+            <Link to='/saved'>
+            <p className='bg-white p-3 rounded-full transition-all duration-300 cursor-pointer'><Bookmark size={15} /></p></Link>
 
           </div>
 
@@ -85,7 +87,7 @@ const Navbar = () => {
                   <ShoppingCart size={15} />
 
                   {cartCount > 0 && (
-                    <span className="absolute -top-2 -right-2 bg-red-600 text-xs w-5 h-5 rounded-full flex justify-center items-center">
+                    <span className="absolute -top-2 -right-2 bg-red-600  text-white text-xs w-5 h-5 rounded-full flex justify-center items-center">
                       {cartCount}
                     </span>
                   )}
@@ -144,7 +146,9 @@ const Navbar = () => {
           >
             Products
           </Link>
-          <p className='flex gap-1 cursor-pointer'><Bookmark />Saved</p>
+
+          <Link to='/saved'>
+          <p className='flex gap-1 cursor-pointer'><Bookmark />Saved</p></Link>
 
         </div>
       )}
