@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react'
 import Hero from '../components/Hero'
 import { getProducts } from '../services/api'
 import ProductGrid from '../components/ProductGrid'
+import SkeletonCard from '../components/SkeletonCard'
 
 const Home = () => {
 
   const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -14,6 +16,8 @@ const Home = () => {
       setProducts(data.slice(0, 8));
     } catch (error) {
       console.error("Failed to fetch products:", error)
+    } finally {
+      setLoading(false)
     }
   };
 
@@ -24,7 +28,17 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <ProductGrid products={products} />
+      {
+        loading ? (
+          <div>
+            {[...Array(8)].map((_, index) => (
+              <SkeletonCard key={index} />
+            ))}
+          </div>
+        ) : (
+          <ProductGrid products={products} />
+        )
+      }
     </div>
   )
 }

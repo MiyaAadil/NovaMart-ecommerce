@@ -1,20 +1,21 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
-
 import MainLayout from '../layouts/MainLayout'
+import Loading from '../components/Loading';
 
-import Home from '../pages/Home'
-import Products from '../pages/Products'
-import ProductDetails from '../pages/ProductDetails'
-import Cart from '../pages/Cart'
-import NotFound from '../pages/NotFound'
-import About from '../pages/About'
-import Wishlist from '../pages/Wishlist'
+const Home = lazy(() => import("../pages/Home"))
+const Products = lazy(() => import('../pages/Products'));
+const ProductDetails = lazy(() => import('../pages/ProductDetails'));
+const Cart = lazy(() => import('../pages/Cart'));
+const NotFound = lazy(() => import('../pages/NotFound'));
+const About = lazy(() => import('../pages/About'));
+const Wishlist = lazy(() => import('../pages/Wishlist'));
 
 const AppRoutes = () => {
   return (
     <div>
-      <Routes>
-
+      <Suspense fallback={<Loading />}>
+        <Routes>
         <Route element={<MainLayout />}>
             <Route path='/' element={<Home />} />
             <Route path='/products' element={<Products />} />
@@ -26,6 +27,7 @@ const AppRoutes = () => {
         
         <Route path='*' element={<NotFound />} />
       </Routes>
+      </Suspense>
     </div>
   )
 }

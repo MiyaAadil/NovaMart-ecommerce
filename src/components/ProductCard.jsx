@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
   const { addToWishlist, removeFromWishlist, isInWishlist } = useContext(WishlistContext);
   
   return (
-    <div className='text-white hover:bg-gray-700 bg-gray-800 py-2 rounded-3xl hover:scale-102 transition-all duration-600 cursor-pointer flex flex-col items-center justify-between gap-2'>
+    <div className='text-white hover:bg-gray-700 bg-gray-800 py-2 rounded-2xl hover:scale-102 transition-all duration-600 cursor-pointer flex flex-col items-center justify-between gap-2'>
 
 
           <div className="relative">
@@ -37,7 +37,7 @@ const ProductCard = ({ product }) => {
 
       <Link to={`/products/${product.id}`}> 
       <div className='flex flex-col items-center'>
-          <img src={product.image} alt={product.title} className='h-30 lg:h-40 lg:w-40 w-30 object-contain' />
+          <img src={product.image} loading="lazy" alt={product.title} className='h-30 lg:h-40 lg:w-40 w-30 object-contain' />
 
           <h3 className='text-xs lg:text-md text-center'>{product.title}</h3>
 

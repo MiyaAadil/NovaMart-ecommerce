@@ -7,8 +7,8 @@ const Wishlist = () => {
 
   if (wishlist.length === 0) {
     return (
-      <div className="text-center mt-20">
-        <h1 className="text-3xl font-bold">Your Wishlist is Empty ❤️</h1>
+      <div className="text-center mt-8 mb-5">
+        <h1 className="text-3xl text-red-500/80 font-bold">Your Wishlist is Empty</h1>
       </div>
     );
   }
