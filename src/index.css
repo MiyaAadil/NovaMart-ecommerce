@@ -2,7 +2,8 @@
 
 
 html, body {
-  background-color: #ceddee;
+  /* background-color: #ceddee; */
+  background: linear-gradient(#D2DBDD, #E0E6DB, #EEEFDA);
 }
 
 html::-webkit-scrollbar, 

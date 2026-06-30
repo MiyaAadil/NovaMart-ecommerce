@@ -11,8 +11,7 @@ const ProductCard = ({ product }) => {
   const { addToWishlist, removeFromWishlist, isInWishlist } = useContext(WishlistContext);
   
   return (
-    <div className='text-white hover:bg-gray-700 bg-gray-800 py-2 rounded-2xl hover:scale-102 transition-all duration-600 cursor-pointer flex flex-col items-center justify-between gap-2'>
-
+    <div className='hover:bg-[#f0f1ec] bg-[#F8F9F4] py-2 rounded-2xl hover:scale-102 transition-all duration-600 cursor-pointer flex flex-col items-center justify-between gap-2'>
 
           <div className="relative">
 
@@ -39,14 +38,14 @@ const ProductCard = ({ product }) => {
       <div className='flex flex-col items-center'>
           <img src={product.image} loading="lazy" alt={product.title} className='h-30 lg:h-40 lg:w-40 w-30 object-contain' />
 
-          <h3 className='text-xs lg:text-md text-center'>{product.title}</h3>
+          <h3 className='text-xs font-semibold lg:text-md text-center'>{product.title}</h3>
 
           <p className='text-sm lg:text-md'>${product.price}</p> 
       </div>
       </Link>
 
       <div className='flex justify-center lg:w-50 gap-2'>
-          <button className='bg-blue-900 text-xs lg:text-md lg:py-2 p-2 lg:px-3 rounded-full cursor-pointer hover:bg-blue-950' onClick={() => addToCart(product)}>Add to Cart</button>
+          <button className='bg-[#DFFE76] shadow-md text-xs font-semibold lg:text-md lg:py-2 p-2 lg:px-3 rounded-full cursor-pointer' onClick={() => addToCart(product)}>Add to Cart</button>
       </div>
 
     </div> 

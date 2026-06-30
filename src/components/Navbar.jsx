@@ -20,54 +20,56 @@ const Navbar = () => {
 
   return (
       <>
-      <nav className="bg-gray-100/90 rounded-full justify-between top-3 mx-5 md:mx-10 h-15 flex sticky z-50 shadow-md">
-
-        <div className="w-full mx-10 flex items-center justify-between">
+      <nav className="bg-gray-100/90 rounded-full top-3 mx-5 px-5 md:mx-10 lg:px-10 h-15 flex items-center justify-between sticky z-50 shadow-md">
 
           {/* Logo */}
-          <Link to="/">
-            <img
-              src={NavLogo}
-              alt="NovaMart Logo"
-              className='h-10 w-20 mt-3 object-contain'
-            />
-          </Link>
+          <div className='flex gap-5'>
+                <Link to="/" className='flex gap-1 items-center bg-slate-200/50 rounded-full p-2 md:w-35'>
 
-          {/* Search (Desktop) */}
-          <div className="hidden md:flex items-center rounded-full bg-white flex-1 max-w-sm mx-10">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="w-full px-5 py-3 text-black outline-none text-sm"
-            />
+                <img
+                  src={NavLogo}
+                  alt="NovaMart Logo"
+                  className='h-5 w-5 object-contain'
+                />
+                <p className='font-semibold'>NOVA MART.</p>
+              </Link>
 
-            <button className="bg-black text-white p-2 rounded-full cursor-pointer transition">
-              <Search />
-            </button>
+              {/* Search (Desktop) */}
+              <div className="hidden md:flex items-center rounded-full bg-white max-w-sm lg:w-100">
+                <input
+                  type="text"
+                  placeholder="Search products..."
+                  className="w-full px-5 py-3 text-black outline-none text-sm"
+                />
+
+                <button className="bg-black text-white p-2 m-1 rounded-full cursor-pointer transition">
+                  <Search />
+                </button>
+              </div>
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center md:gap-5 lg:gap-15">
 
             <Link
               to="/"
-              className="hover:scale-95 transition-all duration-400"
+              className="hover:scale-105 transition-all duration-400"
             >
               Home
             </Link>
 
             <Link
               to="/products"
-              className="hover:scale-96 transition-all duration-400"
+              className="hover:scale-105 transition-all duration-400"
             >
               Products
             </Link>
 
             <Link
               to="/cart"
-              className="relative bg-white p-3 rounded-full transition-all duration-300"
+              className="relative bg-white p-4 rounded-full hover:scale-105 transition-all duration-300"
             >
-              <ShoppingCartIcon size={15} />
+              <ShoppingCartIcon size={17} />
 
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex justify-center items-center">
@@ -77,8 +79,8 @@ const Navbar = () => {
             </Link>
             
             <Link to='/wishlist'
-            className="relative bg-white p-3 cursor-pointer rounded-full transition-all">
-            <Heart size={15} />
+            className="relative bg-white p-4 cursor-pointer rounded-full hover:scale-105 transition-all">
+            <Heart size={17} />
 
             {wishlist.length > 0 && (
             <span className='absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center'>{wishlist.length}</span>
@@ -88,7 +90,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Button */}
-          <div className='flex gap-4'>
+          <div className='flex gap-4 lg:hidden md:hidden'>
               <Link
                   to="/cart"
                   className="relative bg-white p-3 rounded-full transition-all duration-300 md:hidden"
@@ -110,9 +112,7 @@ const Navbar = () => {
               </button>
           </div>
 
-        </div>
-
-      </nav>
+  </nav>
 
       {/* Mobile Menu */}
 
