@@ -157,10 +157,10 @@ const Navbar = () => {
           </Link>
 
           <Link to='/wishlist' onClick={() => setIsOpen(false)}>
-          <div className='flex gap-1'>
+          <div className='flex gap-1 relative w-27'>
             <p>Wishlist</p><Heart />
               {wishlist.length > 0 && (
-                <span className='bg-red-500 ml-3 rounded-full px-1.75'>{wishlist.length}</span>
+                <span className='bg-red-500 ml-1 rounded-full px-1.75 absolute -top-3 right-2'>{wishlist.length}</span>
               )}    
           </div>
           </Link>
