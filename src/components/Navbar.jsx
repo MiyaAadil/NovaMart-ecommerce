@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
       <>
-      <nav className="bg-gray-100/90 lg:mx-10 mx-5 rounded-full top-3 px-5 md:mx-10 lg:px-10 h-15 flex items-center justify-between sticky z-50 shadow-md">
+      <nav className="bg-gray-100/90 lg:mx-10 mx-4 rounded-full top-3 px-5 md:mx-10 lg:px-10 h-15 flex items-center justify-between sticky z-50 shadow-md">
 
           {/* Logo */}
           <div className='flex gap-5'>
@@ -37,7 +37,7 @@ const Navbar = () => {
               </Link>
 
               {/* Search (Desktop) */}
-              <div className="hidden md:flex items-center rounded-full bg-white max-w-sm lg:w-100">
+              <div className="hidden md:flex items-center rounded-full bg-white max-w-sm md:w-55 lg:w-100">
                 <input
                   type="text"
                   placeholder="Search products..."
@@ -55,17 +55,15 @@ const Navbar = () => {
 
             <Link
               to="/"
-              className="hover:scale-105 transition-all duration-300 bg-white p-3 rounded-full flex items-center gap-1"
+              className="hover:scale-105 transition-all duration-300 flex items-center gap-1"
             >
-              <FontAwesomeIcon icon={faHouse} />
               Home
             </Link>
 
             <Link
               to="/products"
-              className="hover:scale-105 transition-all duration-300 bg-white p-3 rounded-full flex items-center gap-1"
+              className="hover:scale-105 transition-all duration-300 flex items-center gap-1"
             >
-              <ShoppingBag size={18} />
               Products
             </Link>
 
