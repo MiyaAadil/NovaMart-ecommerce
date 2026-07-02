@@ -2,9 +2,9 @@ import ProductCard from "./ProductCard";
 
 const ProductGrid = ({ products }) => {
   return (
-    <section className="px-5 py-10 text-gray-800">
+    <section className="px-5 py-10">
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:mx-5">
+      <div className="grid grid-cols-2 lg:grid-cols-4 w-ful items-stretch md:grid-cols-3 gap-5 md:mx-5">
         {products.map((product) => (
           <ProductCard
             key={product.id}

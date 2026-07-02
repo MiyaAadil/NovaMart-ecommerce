@@ -26,9 +26,9 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className=''>
       <Hero />
-      <h1 className='text-3xl font-bold p-10 -mb-15 -mt-10'>Featured Products</h1>
+      <h1 className='text-3xl font-bold p-10 lg:mx-auto -mb-15 -mt-10'>Featured Products</h1>
       {
         loading ? (
           <div>

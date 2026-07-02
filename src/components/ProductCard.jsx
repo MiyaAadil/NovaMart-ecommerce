@@ -11,12 +11,10 @@ const ProductCard = ({ product }) => {
   const { addToWishlist, removeFromWishlist, isInWishlist } = useContext(WishlistContext);
   
   return (
-    <div className='hover:bg-[#f0f1ec] bg-[#F8F9F4] py-2 rounded-2xl hover:scale-102 transition-all duration-600 cursor-pointer flex flex-col items-center justify-between gap-2'>
-
-          <div className="relative">
+    <div className='bg-[#F8F9F4] p-4 rounded-3xl  flex flex-col items-center justify-between gap-3 h-full w-full min-w-0 relative hover:shadow-lg transition-all duration-400 overflow-hidden group'>
 
             <button
-              className="absolute top-0 -right-21 md:-right-40 bg-white rounded-full p-2 shadow cursor-pointer"
+              className="absolute z-20 top-2 right-2 lg:top-0 lg:right-0 lg:m-2 bg-white rounded-full p-2 shadow cursor-pointer transition-transform active:scale-95"
               onClick={() =>
                 isInWishlist(product.id)
                   ? removeFromWishlist(product.id)
@@ -32,20 +30,21 @@ const ProductCard = ({ product }) => {
               />
             </button>
 
-          </div>
+      <Link to={`/products/${product.id}`} className='block w-full min-w-0 flex-1 group-hover:no-underline'> 
+      <div className='flex justify-center flex-col items-center gap-3 w-full min-w-0'>
+          <img src={product.image} loading="lazy" alt={product.title} className='h-30 lg:h-40 lg:w-40 w-30 object-contain hover:scale-102 transition-all duration-500 cursor-pointer' />
 
-      <Link to={`/products/${product.id}`}> 
-      <div className='flex flex-col items-center'>
-          <img src={product.image} loading="lazy" alt={product.title} className='h-30 lg:h-40 lg:w-40 w-30 object-contain' />
-
-          <h3 className='text-xs font-semibold lg:text-md text-center'>{product.title}</h3>
-
-          <p className='text-sm lg:text-md'>${product.price}</p> 
+          <h3 className='text-xs font-bold lg:text-lg w-full text-center truncate'>{product.title}</h3>
+          <p className='text-xs text-gray-500 lg:text-xs text-center w-full truncate'>{product.description}</p>
       </div>
+        
       </Link>
 
-      <div className='flex justify-center lg:w-50 gap-2'>
-          <button className='bg-[#DFFE76] shadow-md text-xs font-semibold lg:text-md lg:py-2 p-2 lg:px-3 rounded-full cursor-pointer' onClick={() => addToCart(product)}>Add to Cart</button>
+      <div className='flex justify-between items-center w-full mt-2 gap-2'>
+
+          <p className='text-sm lg:text-base font-bold text-gray-900'>${product.price}</p>
+
+          <button className='bg-[#DFFE76] hover:bg-[#c5e460] transition-all duration-300 shadow-sm text-xs font-semibold lg:text-md py-2 px-3 lg:px-4 rounded-full cursor-pointer whitespace-nowrap active:scale-95' onClick={() => addToCart(product)}>Add to Cart</button>
       </div>
 
     </div> 

@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
       <>
-      <nav className="bg-gray-100/90 rounded-full top-3 mx-5 px-5 md:mx-10 lg:px-10 h-15 flex items-center justify-between sticky z-50 shadow-md">
+      <nav className="bg-gray-100/90 lg:mx-10 mx-5 rounded-full top-3 px-5 md:mx-10 lg:px-10 h-15 flex items-center justify-between sticky z-50 shadow-md">
 
           {/* Logo */}
           <div className='flex gap-5'>
