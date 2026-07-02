@@ -61,7 +61,7 @@ const Products = () => {
   return (
     <div className="flex flex-col">
 
-      <h1 className="text-3xl font-bold mt-6 mb-5 lg:px-10 px-4">All Products</h1>
+      <h1 className="text-3xl font-bold mt-6 mb-5 lg:px-10 px-4 md:px-10">All Products</h1>
 
       <FilterBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} sortOption={sortOption} setSortOption={setSortOption} />
 

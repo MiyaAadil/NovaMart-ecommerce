@@ -10,7 +10,7 @@ import { faFacebook, faInstagram, faLinkedin, faXTwitter } from '@fortawesome/fr
 const Hero = () => {
   return (
     /* Main Layout: Stacked vertically on mobile, changes to an aligned side-by-side flex layout on desktop */
-    <div className='flex flex-col lg:flex-row p-4 md:p-10 gap-6 w-full mt-2 lg:mt-0 mx-auto items-stretch'>
+    <div className='flex flex-col lg:flex-row p-4 md:p-10 gap-6 w-full mt-2 lg:mt-0 md:mt-0 mx-auto items-stretch'>
 
       {/* Main Big Banner Left Side */}
       {/* Mobile: takes full width. Desktop (lg): Takes up major portion using flex-1 */}

@@ -9,7 +9,7 @@ const categories = [
 const FilterBar = ({ searchTerm, setSearchTerm, selectedCategory, setSelectedCategory, sortOption, setSortOption}) => {
 
   return (
-    <div className="flex flex-col gap-2 lg:px-10 px-4">
+    <div className="flex flex-col gap-2 lg:px-10 px-4 md:px-10">
 
         {/* Search */}
         <input
