@@ -8,7 +8,7 @@ import { CartContext } from '../context/CartContext';
 import { WishlistContext} from '../context/WishlistContext';
 
 
-const Navbar = () => {
+const Navbar = ({searchTerm, setSearchTerm}) => {
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -40,6 +40,8 @@ const Navbar = () => {
               <div className="hidden md:flex items-center rounded-full bg-white max-w-sm md:w-55 lg:w-100">
                 <input
                   type="text"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Search products..."
                   className="w-full px-5 py-3 text-black outline-none text-sm"
                 />

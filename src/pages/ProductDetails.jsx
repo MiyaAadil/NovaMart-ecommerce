@@ -32,18 +32,68 @@ const ProductDetails = () => {
 
 
   return (
-    <div className='text-white flex flex-col items-center justify-center gap-5 m-5 p-5 border rounded-2xl'>
-      <img className='h-100 object-contain' loading='lazy' src={product.image} alt={product.title} />
+  <div className="max-w-7xl mx-auto px-5 py-10">
 
-      <div className='flex flex-col items-center gap-3'>
-        <h1 className='text-2xl font-bold'>{product.title}</h1>
-        <p className='text-xl'>Price: ${product.price}</p>
-        <p className='text-sm'>{product.description}</p>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white rounded-3xl shadow-xl p-8">
 
-        <button className='w-30 bg-red-500 py-2 rounded-full hover:bg-red-600 active:scale-95 transition-all transform-400 cursor-pointer' onClick={() => addToCart(product)}>Add to Cart</button>
+      {/* Product Image */}
+
+      <div className="bg-gray-200 rounded-2xl p-10 flex justify-center items-center">
+
+        <img
+          loading="lazy"
+          src={product.image}
+          alt={product.title}
+          className="h-80 md:h-96 object-contain transition-transform duration-300 hover:scale-105"
+        />
+
       </div>
+
+      {/* Product Information */}
+
+      <div className="flex flex-col justify-center gap-5">
+
+        <span className="bg-red-500 text-sm text-white px-4 py-1 rounded-full w-fit capitalize">
+          {product.category}
+        </span>
+
+        <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+          {product.title}
+        </h1>
+
+        <div className="flex items-center gap-2">
+
+          <span className="text-yellow-400 text-xl">
+            ⭐⭐⭐⭐☆
+          </span>
+
+          <span className="text-gray-400">
+            ({product.rating.rate})
+          </span>
+
+        </div>
+
+        <h2 className="text-4xl font-bold text-red-500">
+          ${product.price}
+        </h2>
+
+        <p className="leading-6">
+          {product.description}
+        </p>
+
+        <button
+          onClick={() => addToCart(product)}
+          className="mt-4 bg-red-500 hover:bg-red-600 active:scale-95 transition-all text-white duration-200 text-lg py-4 rounded-xl font-semibold cursor-pointer"
+        >
+          Add to Cart
+        </button>
+
+      </div>
+
     </div>
-  )
+
+  </div>
+)
 }
 
 export default ProductDetails

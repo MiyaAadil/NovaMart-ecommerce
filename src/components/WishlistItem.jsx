@@ -8,7 +8,7 @@ const WishlistItem = ({ product }) => {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div className="bg-gray-100/80 rounded-2xl p-4 shadow h-55 md:h-auto md:w-80 flex flex-col justify-between">
+    <div className="bg-gray-100/80 rounded-2xl p-4 shadow-md w-full flex flex-col justify-between gap-2">
 
       <img
         src={product.image}
@@ -16,11 +16,11 @@ const WishlistItem = ({ product }) => {
         className="h-15 w-full object-contain md:h-25"
       />
 
-      <h2 className="font-semibold text-sm md:text-lg line-clamp-2 mt-2">
+      <h2 className="font-semibold text-sm md:text-lg line-clamp-2 mt-2 truncate">
         {product.title}
       </h2>
 
-      <p className="font-bold text-blue-900 text-xs md:text-lg mt-2">
+      <p className="font-bold text-blue-950 text-xs md:text-lg mt-2">
         ${product.price}
       </p>
 
@@ -28,7 +28,7 @@ const WishlistItem = ({ product }) => {
 
         <button
           onClick={() => addToCart(product)}
-          className="bg-blue-900 text-white p-2 text-xs rounded-full hover:bg-blue-950 cursor-pointer"
+          className="bg-[#DFFE76] p-2 px-3 text-xs rounded-full hover:bg-[#d0ee6e] transition-all duration-300 active:scale-95 cursor-pointer"
         >
           Add to Cart
         </button>

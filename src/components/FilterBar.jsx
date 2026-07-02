@@ -9,7 +9,7 @@ const categories = [
 const FilterBar = ({ searchTerm, setSearchTerm, selectedCategory, setSelectedCategory, sortOption, setSortOption}) => {
 
   return (
-    <div className="flex flex-col gap-4 mt-4 mx-5">
+    <div className="flex flex-col gap-2 lg:px-10 px-4">
 
         {/* Search */}
         <input
@@ -17,7 +17,7 @@ const FilterBar = ({ searchTerm, setSearchTerm, selectedCategory, setSelectedCat
             placeholder="Search products..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="border p-3 rounded-lg outline-none"
+            className="border p-2 rounded-lg outline-none md:w-135"
         />
 
         {/* Category */}
@@ -27,7 +27,7 @@ const FilterBar = ({ searchTerm, setSearchTerm, selectedCategory, setSelectedCat
                 <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded capitalize transition-all cursor-pointer ${
+                className={`px-3 py-1 rounded capitalize transition-all cursor-pointer ${
                     selectedCategory === category
                     ? "bg-blue-900 text-white"
                     : "bg-gray-200 text-black hover:bg-gray-300"
@@ -40,7 +40,7 @@ const FilterBar = ({ searchTerm, setSearchTerm, selectedCategory, setSelectedCat
 
         {/* Sort */}
 
-        <select className="border p-3 rounded-lg w-60 cursor-pointer"
+        <select className="border p-2 rounded-lg w-60 cursor-pointer"
         value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
 
             <option value="default">Default</option>

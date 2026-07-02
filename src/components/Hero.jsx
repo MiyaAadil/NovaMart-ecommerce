@@ -56,7 +56,7 @@ const Hero = () => {
         </div>
 
         {/* Big Product Visual (Headphones) */}
-        <div className='w-[60%] sm:w-[40%] flex justify-center items-center max-h-60 sm:max-h-full'>
+        <div className='w-[70%] md:w-[70%] sm:w-[40%] flex justify-center items-center max-h-60 sm:max-h-full'>
           <img 
             className='object-contain w-full h-full max-h-70 transform hover:scale-105 transition-transform duration-500' 
             src={Headphone} 
@@ -72,7 +72,7 @@ const Hero = () => {
 
         {/* Box Item 1: Airbuds Widget */}
         <div className='bg-slate-100 rounded-3xl p-5 flex justify-between items-center flex-1 min-h-[160px]'>
-          <div className='flex flex-col justify-between h-full gap-4'>
+          <div className='flex flex-col justify-between h-full gap-5'>
             <h2 className='text-lg font-bold text-slate-900 leading-snug'>New Gen <br /> Airbuds</h2>
             <Link to='/products'>
               <button className='bg-white text-slate-800 rounded-full p-2.5 w-10 h-10 flex items-center justify-center cursor-pointer shadow-sm hover:shadow-md transition-shadow'>
