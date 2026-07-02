@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
-import { Search, ShoppingCart, Menu, X, ShoppingCartIcon, Heart } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, ShoppingCartIcon, Heart, ShoppingBag } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import NavLogo from '../assets/images/Novalogo.png'
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
@@ -53,19 +55,22 @@ const Navbar = () => {
 
             <Link
               to="/"
-              className="hover:scale-105 transition-all duration-400"
+              className="hover:scale-105 transition-all duration-300 bg-white p-3 rounded-full flex items-center gap-1"
             >
+              <FontAwesomeIcon icon={faHouse} />
               Home
             </Link>
 
             <Link
               to="/products"
-              className="hover:scale-105 transition-all duration-400"
+              className="hover:scale-105 transition-all duration-300 bg-white p-3 rounded-full flex items-center gap-1"
             >
+              <ShoppingBag size={18} />
               Products
             </Link>
 
-            <Link
+            <div className='flex gap-3'>
+              <Link
               to="/cart"
               className="relative bg-white p-4 rounded-full hover:scale-105 transition-all duration-300"
             >
@@ -79,13 +84,14 @@ const Navbar = () => {
             </Link>
             
             <Link to='/wishlist'
-            className="relative bg-white p-4 cursor-pointer rounded-full hover:scale-105 transition-all">
-            <Heart size={17} />
+            className="relative bg-white p-4 cursor-pointer rounded-full hover:scale-105 duration-300 transition-all">
+            <Heart size={16} color="red" strokeWidth={3} />
 
             {wishlist.length > 0 && (
             <span className='absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center'>{wishlist.length}</span>
           )}
             </Link>
+            </div>
 
           </div>
 
